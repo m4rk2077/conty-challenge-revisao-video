@@ -1,0 +1,28 @@
+{
+  "name": "conty-challenge-revisao-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API de revisão de peças e versões para o desafio 08 da Conty",
+  "type": "module",
+  "engines": { "node": ">=22.23.3 <23" },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "check": "npm run typecheck && npm test && npm run smoke"
+  },
+  "dependencies": {
+    "@hono/node-server": "2.1.4",
+    "hono": "4.13.13"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "5.0.3"
+  }
+}
